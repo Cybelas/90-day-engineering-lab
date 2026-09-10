@@ -1,0 +1,15 @@
+{
+  "name": "90-day-engineering-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A low-friction, 90-day practical engineering learning challenge.",
+  "scripts": {
+    "generate": "node scripts/generate-exercises.mjs",
+    "check": "node scripts/progress.mjs --check",
+    "progress": "node scripts/progress.mjs --write",
+    "complete": "node scripts/progress.mjs --complete"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

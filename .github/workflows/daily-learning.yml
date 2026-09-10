@@ -1,0 +1,57 @@
+name: Daily learning prompt
+
+on:
+  schedule:
+    - cron: "0 8 * * 1-5"
+      timezone: "Australia/Sydney"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  create-prompt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Open the next exercise
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          LEARNER_LOGIN: ${{ vars.LEARNER_LOGIN }}
+        run: |
+          set -euo pipefail
+
+          if gh issue list --repo "$REPO" --state open --search '"Daily learning:" in:title' --json number --jq 'length' | grep -vq '^0$'; then
+            echo "An unfinished daily learning issue already exists."
+            exit 0
+          fi
+
+          exercise="$(grep -l '^status: todo$' exercises/day-*.md | sort | head -n 1 || true)"
+          if [[ -z "$exercise" ]]; then
+            echo "All exercises are complete."
+            exit 0
+          fi
+
+          day="$(basename "$exercise" .md | sed 's/day-//')"
+          title="$(sed -n 's/^# Day [0-9][0-9][0-9]: //p' "$exercise")"
+          url="https://github.com/$REPO/blob/$DEFAULT_BRANCH/$exercise"
+          body="Today: [$exercise]($url)
+
+          1. Replace both TODO prompts with a concrete solution and reflection.
+          2. Run \`npm run complete -- $((10#$day))\`.
+          3. Commit the exercise and progress files.
+          4. Close this issue, or include its number in the commit message.
+
+          Keep it small: 15–25 focused minutes is enough."
+
+          args=(--repo "$REPO" --title "Daily learning: Day $day — $title" --body "$body")
+          if [[ -n "$LEARNER_LOGIN" ]]; then
+            args+=(--assignee "$LEARNER_LOGIN")
+          fi
+          gh issue create "${args[@]}"
