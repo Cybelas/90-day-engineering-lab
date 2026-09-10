@@ -1,11 +1,11 @@
 # Exercise index
 
 Complete the exercises in order or choose the one most relevant to current work.
-Run `npm run progress` after manual status changes to refresh this table.
+Run `node scripts/progress.mjs --write` after manual status changes to refresh this table.
 
 | Day | Exercise | Track | Status |
 | ---: | --- | --- | :---: |
-| 001 | [Reverse words safely](day-001.md) | Foundations | todo |
+| 001 | [Reverse words safely](day-001.md) | Foundations | ✅ |
 | 002 | [Build a frequency map](day-002.md) | Foundations | todo |
 | 003 | [Deduplicate without losing order](day-003.md) | Foundations | todo |
 | 004 | [Validate balanced delimiters](day-004.md) | Foundations | todo |

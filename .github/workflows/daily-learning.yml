@@ -44,7 +44,7 @@ jobs:
           body="Today: [$exercise]($url)
 
           1. Replace both TODO prompts with a concrete solution and reflection.
-          2. Run \`npm run complete -- $((10#$day))\`.
+          2. Run \`node scripts/progress.mjs --complete $((10#$day))\`.
           3. Commit the exercise and progress files.
           4. Close this issue, or include its number in the commit message.
 

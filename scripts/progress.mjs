@@ -89,7 +89,7 @@ if (shouldWrite) {
   const index = `# Exercise index
 
 Complete the exercises in order or choose the one most relevant to current work.
-Run \`npm run progress\` after manual status changes to refresh this table.
+Run \`node scripts/progress.mjs --write\` after manual status changes to refresh this table.
 
 | Day | Exercise | Track | Status |
 | ---: | --- | --- | :---: |

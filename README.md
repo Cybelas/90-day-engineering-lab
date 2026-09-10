@@ -5,9 +5,9 @@ Each entry combines a working solution with a short note about the trade-offs,
 mistakes, or surprises encountered along the way.
 
 <!-- progress:start -->
-![Progress: 0/90](https://img.shields.io/badge/progress-0%2F90-2563eb)
+![Progress: 1/90](https://img.shields.io/badge/progress-1%2F90-2563eb)
 
-`░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` **0%** — 0 of 90 exercises complete
+`░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` **1%** — 1 of 90 exercises complete
 <!-- progress:end -->
 
 ## What this covers
@@ -28,10 +28,10 @@ or directly testable whenever possible.
 ```bash
 # 1. Edit the next exercise and replace both TODO prompts.
 # 2. Mark it complete and refresh the progress display.
-npm run complete -- 1
+node scripts/progress.mjs --complete 1
 
 # 3. Verify the repository.
-npm run check
+node scripts/progress.mjs --check
 
 # 4. Commit the result. Include "Closes #123" when using a daily issue.
 git add exercises/day-001.md README.md exercises/README.md
