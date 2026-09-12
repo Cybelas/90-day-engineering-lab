@@ -6,7 +6,7 @@ Run `node scripts/progress.mjs --write` after manual status changes to refresh t
 | Day | Exercise | Track | Status |
 | ---: | --- | --- | :---: |
 | 001 | [Reverse words safely](day-001.md) | Foundations | ✅ |
-| 002 | [Build a frequency map](day-002.md) | Foundations | todo |
+| 002 | [Build a frequency map](day-002.md) | Foundations | ✅ |
 | 003 | [Deduplicate without losing order](day-003.md) | Foundations | todo |
 | 004 | [Validate balanced delimiters](day-004.md) | Foundations | todo |
 | 005 | [Merge overlapping intervals](day-005.md) | Foundations | todo |
