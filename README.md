@@ -5,9 +5,9 @@ Each entry combines a working solution with a short note about the trade-offs,
 mistakes, or surprises encountered along the way.
 
 <!-- progress:start -->
-![Progress: 2/90](https://img.shields.io/badge/progress-2%2F90-2563eb)
+![Progress: 3/90](https://img.shields.io/badge/progress-3%2F90-2563eb)
 
-`█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` **2%** — 2 of 90 exercises complete
+`█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` **3%** — 3 of 90 exercises complete
 <!-- progress:end -->
 
 ## What this covers
